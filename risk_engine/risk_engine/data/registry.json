@@ -1,0 +1,40 @@
+{
+  "_note": "Curated facts that cannot be read from the chain (issuers, custodians, off-chain backing). Every entry used in a graph is shown with source=registry so it can be reviewed. Tokens not listed here are classified by on-chain reads and symbol heuristics and flagged as unverified.",
+  "tokens": {
+    "usdc":  {"kind": "fiat_stable", "issuer": "Circle", "issuer_tier": "regulated", "backing": "Cash and short-dated US Treasuries (Circle Reserve Fund)", "offchain_backing": true, "peg": 1.0, "source": "https://www.circle.com/transparency"},
+    "usdt":  {"kind": "fiat_stable", "issuer": "Tether", "issuer_tier": "large", "backing": "Mostly US T-bills, plus BTC, gold and secured loans", "offchain_backing": true, "peg": 1.0, "source": "https://tether.to/en/transparency/"},
+    "pyusd": {"kind": "fiat_stable", "issuer": "Paxos", "issuer_tier": "regulated", "backing": "Cash and US Treasuries", "offchain_backing": true, "peg": 1.0, "source": "https://www.paxos.com/pyusd-transparency"},
+    "ausd":  {"kind": "fiat_stable", "issuer": "Agora", "issuer_tier": "regulated", "backing": "Cash and US Treasuries managed by VanEck, custody State Street", "offchain_backing": true, "peg": 1.0, "source": "https://www.agora.finance/"},
+    "eurc":  {"kind": "eur_stable", "issuer": "Circle", "issuer_tier": "regulated", "backing": "Euro cash reserves (MiCA EMT)", "offchain_backing": true, "peg_ccy": "EUR", "source": "https://www.circle.com/eurc"},
+    "eurcv": {"kind": "eur_stable", "issuer": "SG-FORGE (Societe Generale)", "issuer_tier": "regulated", "backing": "Euro reserves held by Societe Generale group (MiCA EMT)", "offchain_backing": true, "peg_ccy": "EUR", "source": "https://www.sgforge.com/product/coinvertible/"},
+    "europ": {"kind": "eur_stable", "issuer": "Schuman Financial", "issuer_tier": "regulated", "backing": "Euro reserves (MiCA EMT)", "offchain_backing": true, "peg_ccy": "EUR", "source": "https://schuman.io/"},
+    "dai":   {"kind": "synthetic_stable", "issuer": "Sky (MakerDAO)", "issuer_tier": "large", "backing": "Over-collateralised crypto and RWA vaults", "peg": 1.0, "source": "https://sky.money/"},
+    "usds":  {"kind": "synthetic_stable", "issuer": "Sky (MakerDAO)", "issuer_tier": "large", "backing": "Over-collateralised crypto and RWA vaults", "peg": 1.0, "source": "https://sky.money/"},
+    "usde":  {"kind": "synthetic_stable", "issuer": "Ethena", "issuer_tier": "large", "backing": "Delta-neutral: spot ETH/BTC/LSTs hedged with short perps on CEXs", "offchain_backing": true, "peg": 1.0, "source": "https://ethena.fi/"},
+    "susde": {"kind": "yield_stable", "issuer": "Ethena", "issuer_tier": "large", "underlying_symbol": "usde", "backing": "Staked USDe (ERC-4626)", "source": "https://ethena.fi/"},
+    "siusd": {"kind": "yield_stable", "issuer": "infiniFi", "issuer_tier": "crypto_native", "backing": "Staked iUSD; reserves deployed across yield strategies", "source": "https://infinifi.xyz/"},
+    "reusd": {"kind": "rwa", "issuer": "Resilience Foundation Cayman LLC (Re Protocol)", "issuer_tier": "crypto_native", "backing": "Senior tranche of Re's reinsurance capital stack: at least 50% of the deposit high-water mark held on-chain for redemptions, the rest lent to Cover Re SPC (CIMA-licensed reinsurer) as collateral in Regulation 114 trust accounts; losses hit the reinsurer's equity and reUSDe first. Yield-accruing price, no $1 peg", "offchain_backing": true, "source": "https://docs.re.xyz/products/about-reusd"},
+    "fxsave":{"kind": "yield_stable", "issuer": "f(x) Protocol (AladdinDAO)", "issuer_tier": "crypto_native", "backing": "ERC-4626 savings vault over fxUSD stability-pool positions", "source": "https://fx.aladdin.club/"},
+    "weth":  {"kind": "native_wrapped", "issuer": "WETH9 contract (no issuer)", "issuer_tier": "none", "backing": "ETH locked 1:1 in an immutable contract", "immutable": true, "bridged": {"8453": "Base canonical bridge (OP Stack)", "42161": "Arbitrum canonical bridge", "10": "Optimism canonical bridge"}, "source": "https://etherscan.io/token/0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2"},
+    "steth": {"kind": "lst", "issuer": "Lido", "issuer_tier": "large", "underlying_symbol": "weth", "backing": "ETH staked with Lido node operators", "source": "https://lido.fi/"},
+    "wsteth":{"kind": "lst", "issuer": "Lido", "issuer_tier": "large", "underlying_symbol": "steth", "backing": "Wrapped stETH", "bridged": {"8453": "Lido-Base bridge (canonical)", "42161": "Arbitrum canonical bridge"}, "source": "https://lido.fi/"},
+    "cbeth": {"kind": "lst", "issuer": "Coinbase", "issuer_tier": "regulated", "underlying_symbol": "weth", "backing": "ETH staked by Coinbase", "offchain_backing": true, "source": "https://www.coinbase.com/cbeth"},
+    "weeth": {"kind": "lrt", "issuer": "ether.fi", "issuer_tier": "crypto_native", "underlying_symbol": "weth", "backing": "Restaked ETH (EigenLayer) via eETH", "source": "https://www.ether.fi/"},
+    "wbtc":  {"kind": "wrapped_btc", "issuer": "BitGo / BiT Global", "issuer_tier": "large", "backing": "BTC held by custodian", "offchain_backing": true, "source": "https://wbtc.network/"},
+    "cbbtc": {"kind": "wrapped_btc", "issuer": "Coinbase", "issuer_tier": "regulated", "backing": "BTC held by Coinbase custody", "offchain_backing": true, "source": "https://www.coinbase.com/cbbtc"},
+    "tbtc":  {"kind": "wrapped_btc", "issuer": "Threshold Network", "issuer_tier": "crypto_native", "backing": "BTC locked by a threshold-signer set", "source": "https://threshold.network/"},
+    "paxg":  {"kind": "gold", "issuer": "Paxos", "issuer_tier": "regulated", "backing": "London Good Delivery gold bars", "offchain_backing": true, "source": "https://www.paxos.com/paxg"}
+  },
+  "chains": {
+    "1":     {"name": "Ethereum", "chain_class": "ethereum", "explorer": "https://etherscan.io"},
+    "8453":  {"name": "Base", "chain_class": "l2_centralised_sequencer", "settles_to": 1, "explorer": "https://basescan.org", "note": "OP Stack rollup, single sequencer run by Coinbase"},
+    "42161": {"name": "Arbitrum", "chain_class": "l2_centralised_sequencer", "settles_to": 1, "explorer": "https://arbiscan.io"},
+    "10":    {"name": "Optimism", "chain_class": "l2_centralised_sequencer", "settles_to": 1, "explorer": "https://optimistic.etherscan.io"},
+    "137":   {"name": "Polygon PoS", "chain_class": "l1", "explorer": "https://polygonscan.com"},
+    "143":   {"name": "Monad", "chain_class": "young_l1", "explorer": "https://monadscan.com", "note": "Mainnet launched November 2025"}
+  },
+  "protocols": {
+    "morpho_blue":  {"label": "Morpho Blue (core)", "immutable_core": true, "audited_major": true, "launched": "2024-01-01", "llama": "morpho-blue", "source": "https://docs.morpho.org/"},
+    "pendle_v2":    {"label": "Pendle V2", "audited_major": true, "launched": "2022-11-01", "llama": "pendle", "source": "https://docs.pendle.finance/"}
+  }
+}

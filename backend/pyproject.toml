@@ -1,0 +1,25 @@
+[project]
+name = "backend"
+version = "0.1.0"
+description = "FastAPI backend for the DeFi Dependency Risk Engine"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.143.0",
+    "httpx>=0.28.1",
+    "networkx>=3.7",
+    "numpy>=2.5.3",
+    "pydantic>=2.14.0",
+    "python-dotenv>=1.2.4",
+    "risk-engine",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[tool.uv.sources]
+risk-engine = { path = "../risk_engine", editable = true }
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+

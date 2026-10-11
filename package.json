@@ -1,0 +1,21 @@
+{
+  "name": "belem-risk",
+  "private": true,
+  "description": "DeFi dependency risk engine: cross-platform build and launch scripts (Windows / macOS / Linux)",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "postinstall": "npm run setup",
+    "setup": "uv --directory backend sync --frozen && npm --prefix frontend ci",
+    "dev": "concurrently --kill-others --names api,ui --prefix-colors blue,green \"npm:dev:api\" \"npm:dev:ui\"",
+    "dev:api": "uv --directory backend run --frozen python main.py",
+    "dev:ui": "npm --prefix frontend run dev",
+    "build": "npm --prefix frontend run build",
+    "start": "npm run build && npm run dev:api",
+    "test": "uv --directory risk_engine run --frozen --project ../backend pytest -q tests"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
